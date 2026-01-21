@@ -40,7 +40,7 @@ UIStroke.Parent = MainFrame
 
 -- Tiêu đề
 local TitleLabel = Instance.new("TextLabel")
-TitleLabel.Text = "MOON MONITOR"
+TitleLabel.Text = "Check Full Moon Kick - Btuan"
 TitleLabel.Size = UDim2.new(1, 0, 0, 30)
 TitleLabel.BackgroundTransparency = 1
 TitleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -71,7 +71,7 @@ StatusLabel.Parent = MainFrame
 -- Hiển thị Thời Gian
 local TimeLabel = Instance.new("TextLabel")
 TimeLabel.Name = "TimeLabel"
-TimeLabel.Text = "Time: --:--"
+TimeLabel.Text = "Time : --:--"
 TimeLabel.Size = UDim2.new(1, 0, 0, 40)
 TimeLabel.Position = UDim2.new(0, 0, 0.6, 0)
 TimeLabel.BackgroundTransparency = 1
@@ -198,7 +198,8 @@ mainLoop()
 
 -- Thông báo đã load
 game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "Check Moon ??? Phong Gay ";
+    Title = "ntramcute:))";
     Text = "UI Loaded! Made by Btuan";
     Duration = 5;
 })
+
