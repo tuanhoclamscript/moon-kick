@@ -3,35 +3,30 @@ local RunService = game:GetService("RunService")
 local Lighting = game:GetService("Lighting")
 local CoreGui = game:GetService("CoreGui")
 local TweenService = game:GetService("TweenService")
-
---------------------------------------------------------------------------------
--- PHẦN 1: TẠO GIAO DIỆN (UI) ĐẸP MẮT
---------------------------------------------------------------------------------
-
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Name = "MoonMonitorUI"
--- Nếu chạy trên Executor thì dùng CoreGui cho an toàn, nếu Studio thì dùng PlayerGui
+
 if pcall(function() return CoreGui:FindFirstChild("RobloxGui") end) then
     ScreenGui.Parent = CoreGui
 else
     ScreenGui.Parent = Players.LocalPlayer:WaitForChild("PlayerGui")
 end
 
--- Khung chính (Main Frame)
+
 local MainFrame = Instance.new("Frame")
 MainFrame.Name = "MainFrame"
 MainFrame.Size = UDim2.new(0, 250, 0, 130)
-MainFrame.Position = UDim2.new(0.05, 0, 0.75, 0) -- Vị trí mặc định góc trái dưới
+MainFrame.Position = UDim2.new(0.05, 0, 0.75, 0)
 MainFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 30)
 MainFrame.BorderSizePixel = 0
 MainFrame.Parent = ScreenGui
 
--- Bo góc cho khung
+
 local UICorner = Instance.new("UICorner")
 UICorner.CornerRadius = UDim.new(0, 12)
 UICorner.Parent = MainFrame
 
--- Viền sáng (Stroke)
+
 local UIStroke = Instance.new("UIStroke")
 UIStroke.Thickness = 2
 UIStroke.Color = Color3.fromRGB(80, 180, 255)
@@ -63,24 +58,24 @@ StatusLabel.Text = "Status: Checking..."
 StatusLabel.Size = UDim2.new(1, 0, 0, 30)
 StatusLabel.Position = UDim2.new(0, 0, 0.35, 0)
 StatusLabel.BackgroundTransparency = 1
-StatusLabel.TextColor3 = Color3.fromRGB(255, 100, 100) -- Màu đỏ nhạt mặc định
+StatusLabel.TextColor3 = Color3.fromRGB(255, 100, 100) 
 StatusLabel.Font = Enum.Font.GothamSemibold
 StatusLabel.TextSize = 14
 StatusLabel.Parent = MainFrame
 
--- Hiển thị Thời Gian
+
 local TimeLabel = Instance.new("TextLabel")
 TimeLabel.Name = "TimeLabel"
 TimeLabel.Text = "Time : --:--"
 TimeLabel.Size = UDim2.new(1, 0, 0, 40)
 TimeLabel.Position = UDim2.new(0, 0, 0.6, 0)
 TimeLabel.BackgroundTransparency = 1
-TimeLabel.TextColor3 = Color3.fromRGB(100, 255, 150) -- Màu xanh lá
+TimeLabel.TextColor3 = Color3.fromRGB(100, 255, 150) 
 TimeLabel.Font = Enum.Font.GothamBold
 TimeLabel.TextSize = 24
 TimeLabel.Parent = MainFrame
 
--- Chức năng Kéo Thả (Draggable)
+
 local UserInputService = game:GetService("UserInputService")
 local dragging, dragInput, dragStart, startPos
 
@@ -115,11 +110,6 @@ UserInputService.InputChanged:Connect(function(input)
     end
 end)
 
---------------------------------------------------------------------------------
--- PHẦN 2: LOGIC CỦA BẠN (Đã tối ưu hóa)
---------------------------------------------------------------------------------
-
--- Hàm lấy thời gian
 function getServerTime()
     local realTime = Lighting.ClockTime
     local minute = math.floor(realTime) -- Đây thực tế là Giờ trong game (Hour)
@@ -127,7 +117,7 @@ function getServerTime()
     return minute, second
 end
 
--- Hàm lấy ID Moon
+
 function MoonTextureId()
     if game.PlaceId == 2753915549 or game.PlaceId == 4442272183 then
         return Lighting:FindFirstChild("FantasySky") and Lighting.FantasySky.MoonTextureId
@@ -137,7 +127,7 @@ function MoonTextureId()
     return nil
 end
 
--- Hàm check trạng thái
+
 function getMoonState()
     local moon0 = "http://www.roblox.com/asset/?id=9709149680"
     local moon1 = "http://www.roblox.com/asset/?id=9709150401"
@@ -150,10 +140,6 @@ function getMoonState()
     else return "Other"
     end
 end
-
---------------------------------------------------------------------------------
--- PHẦN 3: VÒNG LẶP KIỂM TRA & CẬP NHẬT GUI
---------------------------------------------------------------------------------
 
 local function mainLoop()
     task.spawn(function()
@@ -202,4 +188,5 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
     Text = "UI Loaded! Made by Btuan";
     Duration = 5;
 })
+
 
