@@ -276,7 +276,7 @@ task.spawn(function()
 		if currentTexture == "http://www.roblox.com/asset/?id=9709149431" and h == 6 and m == 0 then
 			 game.shutdown()
 			 break
-		elseif currentTexture == "http://www.roblox.com/asset/?id=9709149680" or currentTexture == "http://www.roblox.com/asset/?id=9709150401" then
+		elseif currentTexture == "http://www.roblox.com/asset/?id=9709149680" or currentTexture == "http://www.roblox.com/asset/?id=9709150401" or currentTexture == "http://www.roblox.com/asset/?id=9709135895" or currentTexture == "http://www.roblox.com/asset/?id=9709139597" or currentTexture == "http://www.roblox.com/asset/?id=9709150086" then
 			 game.shutdown()
 			 break
 		end
@@ -287,3 +287,4 @@ task.spawn(function()
 end)
 
 game:GetService("StarterGui"):SetCore("SendNotification", {Title = "Ntramcutii=))"; Text = "Script Loaded - Thắng Gay "; Duration = 10})
+
