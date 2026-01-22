@@ -41,7 +41,7 @@ UIStroke.Parent = MainFrame
 
 -- Tiêu đề
 local TitleLabel = Instance.new("TextLabel")
-TitleLabel.Text = "MOON & GEAR TOOL"
+TitleLabel.Text = "Kick FM - Checking Gear (Btuan)"
 TitleLabel.Size = UDim2.new(1, 0, 0, 25)
 TitleLabel.BackgroundTransparency = 1
 TitleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -259,3 +259,4 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
     Text = "Script Check Is Loaded";
     Duration = 10;
 })
+
