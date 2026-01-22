@@ -235,7 +235,7 @@ task.spawn(function()
              game.shutdown() -- Tắt game để tránh bị kick
              break
         elseif currentTexture == "http://www.roblox.com/asset/?id=9709149680" or currentTexture == "http://www.roblox.com/asset/?id=9709150401" then
-             
+             game.shutdown()
              break
         end
 
@@ -244,3 +244,4 @@ task.spawn(function()
 end)
 
 game:GetService("StarterGui"):SetCore("SendNotification", {Title = "Ntramcutii=)))"; Text = "Script Is Loaded - thắng gay !!"; Duration = 10})
+
