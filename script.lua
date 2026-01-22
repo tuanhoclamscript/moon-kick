@@ -167,10 +167,10 @@ local function mainLoop()
 
             -- Logic Kick Của Bạn
             if moonState == "Moon5" and h == 6 and m == 0 then
-                Players.LocalPlayer:Kick("End FullMoon Dev : Btuan")
+                game:Shutdown()
                 break
             elseif moonState == "Moon0" or moonState == "Moon1" then
-                Players.LocalPlayer:Kick("Moon 0 hoặc Moon 1")
+                game:Shutdown()
                 break
             end
 
@@ -188,5 +188,6 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
     Text = "UI Loaded! Made by Btuan";
     Duration = 5;
 })
+
 
 
