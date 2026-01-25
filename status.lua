@@ -180,3 +180,5 @@ task.spawn(function()
         pcall(UpdateStats)
     end
 end)
+
+game:GetService("StarterGui"):SetCore("SendNotification", {Title="Ntramcutii=))"; Text="Script Is Loaded!!!"; Duration=20})
