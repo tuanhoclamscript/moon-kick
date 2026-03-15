@@ -267,5 +267,5 @@ task.spawn(function()
 end)
 
 -- Thông báo khởi động
-game:GetService("StarterGui"):SetCore("SendNotification", {Title = "Ntramcutii=)))", Text = "Loaded Script !!", Duration = 10})
+game:GetService("StarterGui"):SetCore("SendNotification", {Title = "glinhcutee=))", Text = "Loaded Script !!", Duration = 10})
 
